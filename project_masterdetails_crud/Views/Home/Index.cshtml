@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="card">
+    <div class="card-header">
+        <h2 class="text-center display-5">Aggregate calculation on Vendor & Invoice table</h2>
+    </div>
+    <div class="card-body" style="background-image: url('../../images/card1.jpg');">
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>Count</th>
+                    <th>Min Invoice Total</th>
+                    <th>Max Invoice Total</th>
+                    <th>Avg Invoice Total</th>
+                    <th>Sum of Invoice Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@ViewBag.NumberOfVendors</td>
+                    <td>@ViewBag.InvoiceMin</td>
+                    <td>@ViewBag.InvoiceMax</td>
+                    <td>@ViewBag.InvoiceAvg</td>
+                    <td>@ViewBag.InvoiceSum</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+

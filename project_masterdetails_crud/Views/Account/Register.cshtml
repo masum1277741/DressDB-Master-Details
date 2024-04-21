@@ -1,0 +1,48 @@
+﻿@model project_masterdetails_crud.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="col-8">
+    <div class="card">
+        <div class="card-body" style="background-image: url('../../images/card3.jpg'); ">
+            <div class="offset-md-4 col-md-8">
+                <main aria-labelledby="title">
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4 class="display-6 ">Please Register here.....</h4>
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <div class="row mb-2">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 col-form-label btn btn-secondary" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 col-form-label btn btn-secondary" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 col-form-label btn btn-secondary" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-md-2 col-md-10">
+                                <input type="submit" value="Register" class="btn btn-outline-success mt-1" />
+                            </div>
+                        </div>
+                    }
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

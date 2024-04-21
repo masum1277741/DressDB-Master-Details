@@ -1,0 +1,40 @@
+﻿@model IEnumerable<project_masterdetails_crud.Models.DressModel>
+
+@{
+    ViewBag.Title = "Dress Model";
+}
+<div class="card">
+    <div class="card-body" style="background-image: url('../../images/card2.jpg');">
+        <div class="row">
+            <div class="col">
+                <p class="d-flex justify-content-end">
+                    <a href="@Url.Action("Create","DressModels")" class="btn btn-outline-primary">Add New</a>
+                </p>
+                <table class="table table-bordered table-striped table-sm table-hover">
+                    <thead class="table-info">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ModelName)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ModelName)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.DressModelId }, new { @class = "btn btn-outline-info btn-sm" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.DressModelId }, new { @class = "btn btn-outline-danger btn-sm" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

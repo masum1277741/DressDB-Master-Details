@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="row">
+    <div class="col">
+        <div id="form-div">
+            @Html.Action("CreateForm")
+        </div>
+    </div>
+</div>
+<div>
+    <a href="@Url.Action("Index","Dresses")" class="btn btn-link btn-sm"><i class="fa fa-arrow-circle-left"></i> Back to list</a>
+</div>

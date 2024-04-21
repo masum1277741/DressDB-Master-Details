@@ -1,0 +1,42 @@
+﻿@model IEnumerable<project_masterdetails_crud.Models.Brand>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="card">
+    <div class="card-body" style="background-image: url('../../images/card2.jpg');">
+        <div class="row">
+            <div class="col">
+                <p class="d-flex justify-content-end">
+                    <a href="@Url.Action("Create","Brands")" class="btn btn-outline-primary">Add New</a>
+                </p>
+                <table class="table table-bordered table-striped table-sm table-hover">
+                    <thead class="table-info">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.BrandName)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BrandName)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.BrandId }, new { @class = "btn btn-outline-info btn-sm" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.BrandId }, new { @class = "btn btn-outline-danger btn-sm" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
